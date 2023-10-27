@@ -1,0 +1,13 @@
+#clean-console {
+    color: #337ab7;
+}
+#clean-console:hover {
+    color: rgb(235, 8, 46);
+    cursor: pointer;
+}
+#clean-console:active {
+    color: rgb(185, 6, 36);
+    position: relative;
+    top: 1px;
+    /* color: rgb(167, 10, 36); */
+}

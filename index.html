@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>html-project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 75%;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            background-color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+        li:hover {
+            background-color: #ebebeb;
+        }
+
+        a {
+            display: block;
+            padding: 10px;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>网站目录</h1>
+    <ul>
+        <li><a href="html/index.html">单页Demo</a></li>
+        <li><a href="ws/index.html">WebSocket在线测试</a></li>
+        <li><a href="exam/index.html">刷题网站</a></li>
+        <!-- 在这里继续添加更多页面的标题和链接 -->
+    </ul>
+</body>
+<script>
+    window.onload = () => {
+        // 获取所有的 <li> 元素以及元素个数
+        const liItems = document.querySelectorAll('li');
+        const length = liItems.length.toString().length;
+        
+        // 遍历每个 <li> 元素
+        liItems.forEach((item, index) => {
+            // 创建一个文本节点，包含序号和空格
+            const itemNumberText = document.createTextNode(fillNumber(index + 1, length) + '. ');
+            // 获取 <a> 元素
+            const anchor = item.querySelector('a');
+            // 插入序号文本到 <a> 前面
+            anchor.insertBefore(itemNumberText, anchor.firstChild);
+        });
+    }
+
+    /**
+     * 为序号按照指定长度进行补0
+     * 
+     * count:  序号
+     * length: 补0后的长度
+     */
+    function fillNumber(count, length) {
+        var prefix = '';
+        for (index = count.toString().length; index < length; index++) {
+            prefix += '0';
+        }
+        return prefix + count;
+    }
+</script>
+</html>

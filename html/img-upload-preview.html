@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>上传图片显示预览图</title>
+	<script>
+		//下面用于多图片上传预览功能
+		function setImagePreviews() {
+			let file = document.getElementById("file").files[0];
+			if( file==null )
+				return false;
+			if( file.type.substring(0, 5)!="image" ){
+				alert("请上传图片类型文件")
+				return false;
+			}
+			let url = window.URL.createObjectURL(file);
+			console.log( url );
+			document.getElementById("img").src = url;
+		}
+	</script>
+</head>
+
+<body>
+	<input id="file" type="file" accept="image/*" onchange="setImagePreviews()">
+	<br />
+	<p>图片展示区</p>
+	<img id="img" src="">
+</body>
+</html>

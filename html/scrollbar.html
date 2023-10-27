@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS滚动条操作</title>
+	<style>
+		h2 {
+			padding-top: 20px;
+			margin-bottom: 800px;
+			padding-left: 10%;
+		}
+		.nav {
+			position: fixed;
+			right: 30px;
+			top: 30px;
+		}
+		.nav li {
+			display: block;
+			width: 100%;
+			height: 20px;
+			font-size: 15px;
+			margin: 2px 0;
+		}
+		.nav li:hover {
+			font-weight: 900;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function to( index ){
+			var dom = document.getElementById("to"+index);
+			var top = dom.offsetTop;
+			console.log("距离顶部 " + top + "px")
+			window.scrollTo({
+				// 跳转的目标位置
+				top: top,
+				// 滚动效果：平滑过渡
+				behavior: "smooth"
+			})
+		}
+		
+	</script>
+</head>
+<body>
+	<h2 id="to1">电子产品</h2>
+	<h2 id="to2">鞋帽袜子</h2>
+	<h2 id="to3">母婴用品</h2>
+	<h2 id="to4">时尚潮牌</h2>
+	<h2 id="to5">虚拟道具</h2>
+	<div class="nav">
+		<li onclick="to(1)">电子产品</li>
+		<li onclick="to(2)">鞋帽袜子</li>
+		<li onclick="to(3)">母婴用品</li>
+		<li onclick="to(4)">时尚潮牌</li>
+		<li onclick="to(5)">虚拟道具</li>
+	</div>
+</body>
+</html>
