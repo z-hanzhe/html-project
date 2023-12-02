@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="js cssanimations">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>M3U8在线播放器</title>
+    <link rel="stylesheet" type="text/css" href="css/amazeui.flat.min.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="am-topbar am-topbar-inverse">
+      <div class="am-container">
+        <p class="am-topbar-brand">
+          <a href="" class="am-topbar-logo">M3U8播放器</a>
+        </p> 
+        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
+          <div class="am-topbar-right">
+            <a class="am-btn am-btn-primary am-topbar-btn am-btn-sm" title="源码来自互联网, 为防止失联自己复刻一份, 点击访问原作者" href="http://tool.liumingye.cn/m3u8" target="_blank">访问原作者</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="am-container">
+      <div class="logo">M3U8 在线播放器</div>
+      <div class="am-u-lg-6 input-div">
+        <form method="post" id="str-post" class="am-input-group am-input-group-primary">
+          <input type="text" name="url" placeholder="请输入m3u8播放地址" autocomplete="off" class="am-form-field s-input">
+          <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" type="submit">解析</button>
+          </span>
+        </form>
+      </div>
+      <video id="player" controls></video>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/amazeui.min.js"></script>
+    <script src="js/hls.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
